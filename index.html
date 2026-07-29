@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tedi Firdaus | Data Analyst Portfolio</title>
+<meta name="description" content="Portofolio Tedi Firdaus - Mahasiswa Bisnis Digital dengan fokus pada Microsoft Excel, pengolahan data operasional, dan proyek analisis data.">
+<meta property="og:title" content="Tedi Firdaus | Data Analyst Portfolio">
+<meta property="og:description" content="Portfolio profesional untuk posisi Data Analyst Intern dengan fokus pada Excel dan pengolahan data.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress"><div class="scroll-progress-bar" id="scrollProgress"></div></div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#home" class="nav-logo">TF<span class="nav-logo-dot">.</span></a>
+    <nav class="nav-menu" id="navMenu">
+      <a href="#home" class="nav-link active" data-section="home">Home</a>
+      <a href="#tentang" class="nav-link" data-section="tentang">Tentang Saya</a>
+      <a href="#keahlian" class="nav-link" data-section="keahlian">Keahlian</a>
+      <a href="#pengalaman" class="nav-link" data-section="pengalaman">Pengalaman</a>
+      <a href="#proyek" class="nav-link" data-section="proyek">Proyek</a>
+      <a href="#pendidikan" class="nav-link" data-section="pendidikan">Pendidikan & Sertifikasi</a>
+      <a href="#kontak" class="nav-link nav-cta" data-section="kontak">Kontak</a>
+    </nav>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <p class="eyebrow">Data Analyst Intern &middot; Data Admin &middot; Reporting Intern</p>
+      <h1 class="hero-name">Tedi Firdaus</h1>
+      <p class="hero-role">Data Analyst Enthusiast <span class="dot-sep">•</span> Business Digital Student</p>
+      <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <img src="profil.jpg" alt="Foto Tedi Firdaus" class="hero-photo" onerror="this.parentElement.classList.add('img-fallback')">
+        <div class="hero-photo-placeholder"><i class="fa-solid fa-user"></i></div>
+      </div>
+      <div class="hero-photo-badge"><i class="fa-solid fa-table-columns"></i> Excel Focused</div>
+    </div>
+      <p class="hero-value">Mahasiswa Bisnis Digital dengan fokus pada <strong>Microsoft Excel</strong>, pengolahan data operasional, dan analisis data sederhana untuk membantu penyusunan laporan dan pengambilan keputusan berbasis data.</p>
+      
+      <div class="chip-row">
+        <span class="chip"><i class="fa-solid fa-location-dot"></i> Garut, Jawa Barat</span>
+        <span class="chip"><i class="fa-solid fa-graduation-cap"></i> IPK 3.98</span>
+        <span class="chip"><i class="fa-solid fa-table-cells"></i> Fokus: Excel &amp; Data Processing</span>
+        <span class="chip chip-accent"><i class="fa-solid fa-circle-check"></i> Terbuka untuk Magang Data Analyst</span>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+        <a href="CV Tedi Firdaus.pdf" class="btn btn-secondary" download>Lihat CV</a>
+      </div>
+    </div>
+
+  </div>
+  <a href="#tentang" class="scroll-hint" aria-label="Gulir ke bawah"><i class="fa-solid fa-chevron-down"></i></a>
+</section>
+
+<!-- TENTANG / MENGAPA RELEVAN -->
+<section class="section" id="tentang">
+  <div class="container">
+    <p class="section-eyebrow">Tentang Saya</p>
+    <h2 class="section-title">Mengapa Saya Relevan untuk Posisi Data Analyst Intern?</h2>
+
+    <div class="reason-grid">
+      <div class="reason-card">
+        <div class="reason-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+        <h3>Pengalaman Data Operasional</h3>
+        <p>Mengelola pencatatan stok, transaksi, dan penyewaan menggunakan Excel dan Google Sheets.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-icon"><i class="fa-solid fa-list-check"></i></div>
+        <h3>Ketelitian Administrasi Data</h3>
+        <p>Terbiasa menyusun rekap data operasional secara rapi dan konsisten.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-icon"><i class="fa-solid fa-chart-pie"></i></div>
+        <h3>Proyek Analisis Data</h3>
+        <p>Memiliki pengalaman mengolah data ulasan dan membuat visualisasi sederhana menggunakan Google Colab.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEAHLIAN -->
+<section class="section section-alt" id="keahlian">
+  <div class="container">
+    <p class="section-eyebrow">Keahlian</p>
+    <h2 class="section-title">Dashboard Kompetensi</h2>
+
+    <div class="skills-layout">
+      <div class="skills-col">
+        <h3 class="skills-col-title"><i class="fa-solid fa-microchip"></i> Hard Skill</h3>
+
+        <div class="skill-row" data-tip="Digunakan setiap hari untuk pengolahan &amp; rekap data">
+          <div class="skill-row-head"><span><i class="fa-solid fa-file-excel"></i> Microsoft Excel</span><span class="skill-level level-primary">Fokus Utama</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-row" data-tip="Digunakan untuk kolaborasi rekap data tim">
+          <div class="skill-row-head"><span><i class="fa-brands fa-google-drive"></i> Google Sheets</span><span class="skill-level level-active">Aktif Digunakan</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-row" data-tip="Digunakan untuk dokumentasi &amp; laporan">
+          <div class="skill-row-head"><span><i class="fa-solid fa-file-word"></i> Microsoft Word</span><span class="skill-level level-active">Aktif Digunakan</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-row" data-tip="Menyusun rekap operasional yang rapi & konsisten">
+          <div class="skill-row-head"><span><i class="fa-solid fa-table-list"></i> Administrasi &amp; Rekap Data</span><span class="skill-level level-active">Aktif Digunakan</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-row" data-tip="Preprocessing data pada proyek analisis sentimen">
+          <div class="skill-row-head"><span><i class="fa-solid fa-broom"></i> Data Cleaning Dasar</span><span class="skill-level level-basic">Dasar</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:55%"></div></div>
+        </div>
+        <div class="skill-row" data-tip="Pencatatan stok, transaksi & penyewaan">
+          <div class="skill-row-head"><span><i class="fa-solid fa-gears"></i> Pengelolaan Data Operasional</span><span class="skill-level level-primary">Fokus Utama</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div>
+        </div>
+      </div>
+
+      <div class="skills-col">
+        <h3 class="skills-col-title"><i class="fa-solid fa-people-arrows"></i> Soft Skill</h3>
+        <div class="soft-skill-grid">
+          <div class="soft-skill-card"><i class="fa-solid fa-magnifying-glass"></i><span>Teliti</span></div>
+          <div class="soft-skill-card"><i class="fa-solid fa-comments"></i><span>Komunikasi</span></div>
+          <div class="soft-skill-card"><i class="fa-solid fa-people-group"></i><span>Kerja Sama Tim</span></div>
+          <div class="soft-skill-card"><i class="fa-solid fa-shield-heart"></i><span>Tanggung Jawab</span></div>
+          <div class="soft-skill-card"><i class="fa-solid fa-clock"></i><span>Manajemen Waktu</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PENGALAMAN -->
+<section class="section" id="pengalaman">
+  <div class="container">
+    <p class="section-eyebrow">Pengalaman</p>
+    <h2 class="section-title">Rekam Jejak Kontribusi</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Nov 2025 – Sekarang</span>
+          <h3>Trek-Out Adventure</h3>
+          <p class="timeline-role">Administrasi &amp; Operasional</p>
+          <ul>
+            <li>Mengelola data penyewaan, stok barang, transaksi, dan pengembalian menggunakan Microsoft Excel dan Google Sheets.</li>
+            <li>Membuat rekap data operasional untuk membantu pemantauan stok dan transaksi secara lebih terstruktur.</li>
+          </ul>
+          <div class="highlight-box">
+            <i class="fa-solid fa-lightbulb"></i>
+            <p><strong>Fokus relevan:</strong> Pengelolaan data operasional, pencatatan transaksi, dan penyusunan rekap menggunakan Excel.</p>
+          </div>
+          <div class="timeline-gallery" data-gallery="trekout">
+            <div class="gallery-item timeline-thumb" data-index="0">
+              <img src="images/trekout-1.jpg" alt="Dokumentasi kegiatan Trek-Out Adventure 1" onerror="this.parentElement.classList.add('img-fallback')">
+              <div class="gallery-fallback"><i class="fa-solid fa-camera"></i><span>Bukti Kegiatan</span></div>
+              <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="gallery-item timeline-thumb" data-index="1">
+              <img src="images/trekout-2.jpg" alt="Dokumentasi kegiatan Trek-Out Adventure 2" onerror="this.parentElement.classList.add('img-fallback')">
+              <div class="gallery-fallback"><i class="fa-solid fa-camera"></i><span>Bukti Kegiatan</span></div>
+              <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="gallery-item timeline-thumb" data-index="2">
+              <img src="images/trekout-3.jpg" alt="Dokumentasi kegiatan Trek-Out Adventure 3" onerror="this.parentElement.classList.add('img-fallback')">
+              <div class="gallery-fallback"><i class="fa-solid fa-camera"></i><span>Bukti Kegiatan</span></div>
+              <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Ags 2024 – Sekarang</span>
+          <h3>Masagi Outbound Garut</h3>
+          <p class="timeline-role">Event Support &amp; Dokumentasi</p>
+          <ul>
+            <li>Mengelola dokumentasi foto dan video kegiatan.</li>
+            <li>Berkoordinasi dengan tim operasional untuk mendukung kelancaran kegiatan.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Team Coordination</span>
+            <span class="tag">Operational Support</span>
+          </div>
+          <div class="timeline-gallery" data-gallery="masagi">
+            <div class="gallery-item timeline-thumb" data-index="0">
+              <img src="images/masagi-1.jpg" alt="Dokumentasi kegiatan Masagi Outbound Garut 1" onerror="this.parentElement.classList.add('img-fallback')">
+              <div class="gallery-fallback"><i class="fa-solid fa-camera"></i><span>Bukti Kegiatan</span></div>
+              <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="gallery-item timeline-thumb" data-index="1">
+              <img src="images/masagi-2.jpg" alt="Dokumentasi kegiatan Masagi Outbound Garut 2" onerror="this.parentElement.classList.add('img-fallback')">
+              <div class="gallery-fallback"><i class="fa-solid fa-camera"></i><span>Bukti Kegiatan</span></div>
+              <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+            <div class="gallery-item timeline-thumb" data-index="2">
+              <img src="images/masagi-3.jpg" alt="Dokumentasi kegiatan Masagi Outbound Garut 3" onerror="this.parentElement.classList.add('img-fallback')">
+              <div class="gallery-fallback"><i class="fa-solid fa-camera"></i><span>Bukti Kegiatan</span></div>
+              <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYEK -->
+<section class="section section-alt" id="proyek">
+  <div class="container">
+    <p class="section-eyebrow">Proyek</p>
+    <h2 class="section-title">Proyek yang Menunjukkan Kemampuan Pengolahan Data</h2>
+
+    <!-- PROYEK 1 -->
+    <div class="project-card">
+      <div class="project-head">
+        <h3>Analisis Sentimen Papandayan</h3>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Google Colab</span>
+          <span class="stack-tag">IndoBERT</span>
+          <span class="stack-tag">Visualisasi Data</span>
+        </div>
+      </div>
+      <p class="project-summary">Proyek akademik yang berfokus pada pengolahan data ulasan wisata untuk mengidentifikasi sentimen positif, netral, dan negatif melalui tahapan preprocessing dan visualisasi hasil analisis.</p>
+
+      <div class="project-body">
+        <div class="project-tasks">
+          <h4>Yang Saya Kerjakan</h4>
+          <ul>
+            <li>Data cleaning</li>
+            <li>Tokenisasi</li>
+            <li>Stopword removal</li>
+            <li>Stemming</li>
+            <li>Klasifikasi sentimen</li>
+            <li>Visualisasi distribusi sentimen</li>
+            <li>Pembuatan wordcloud</li>
+          </ul>
+        </div>
+
+        <div class="project-gallery" data-gallery="papandayan">
+          <div class="gallery-item" data-index="0">
+            <img src="images/papandayan-colab.png" alt="Screenshot Google Colab" onerror="this.parentElement.classList.add('img-fallback')">
+            <div class="gallery-fallback"><i class="fa-solid fa-image"></i><span>Google Colab</span></div>
+            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="gallery-item" data-index="1">
+            <img src="images/papandayan-preprocessing.png" alt="Screenshot preprocessing" onerror="this.parentElement.classList.add('img-fallback')">
+            <div class="gallery-fallback"><i class="fa-solid fa-image"></i><span>Preprocessing</span></div>
+            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="gallery-item" data-index="2">
+            <img src="images/papandayan-sentimen.png" alt="Screenshot distribusi sentimen" onerror="this.parentElement.classList.add('img-fallback')">
+            <div class="gallery-fallback"><i class="fa-solid fa-image"></i><span>Distribusi Sentimen</span></div>
+            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="gallery-item" data-index="3">
+            <img src="images/papandayan-wordcloud.png" alt="Screenshot wordcloud" onerror="this.parentElement.classList.add('img-fallback')">
+            <div class="gallery-fallback"><i class="fa-solid fa-image"></i><span>Wordcloud</span></div>
+            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROYEK 2 -->
+    <div class="project-card">
+      <div class="project-head">
+        <h3>Pengelolaan Data Penyewaan</h3>
+        <div class="project-stack">
+          <span class="stack-tag">Microsoft Excel</span>
+          <span class="stack-tag">Google Sheets</span>
+        </div>
+      </div>
+      <p class="project-summary">Membuat format pencatatan stok, transaksi, dan rekap penyewaan menggunakan Excel dan Google Sheets untuk membantu pengelolaan data operasional usaha secara lebih terstruktur.</p>
+
+      <div class="project-gallery excel-gallery" data-gallery="excel">
+        <div class="gallery-item excel-frame" data-index="0">
+          <div class="excel-titlebar"><i class="fa-solid fa-file-excel"></i> stok.xlsx</div>
+          <img src="images/excel-stok.png" alt="Mockup rekap stok Excel" onerror="this.parentElement.classList.add('img-fallback')">
+          <div class="gallery-fallback"><i class="fa-solid fa-table"></i><span>Rekap Stok</span></div>
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item excel-frame" data-index="1">
+          <div class="excel-titlebar"><i class="fa-solid fa-file-excel"></i> transaksi.xlsx</div>
+          <img src="images/excel-transaksi.png" alt="Mockup rekap transaksi Excel" onerror="this.parentElement.classList.add('img-fallback')">
+          <div class="gallery-fallback"><i class="fa-solid fa-table"></i><span>Rekap Transaksi</span></div>
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item excel-frame" data-index="2">
+          <div class="excel-titlebar"><i class="fa-solid fa-file-excel"></i> rekap.xlsx</div>
+          <img src="images/excel-rekap.png" alt="Mockup rekap penyewaan Excel" onerror="this.parentElement.classList.add('img-fallback')">
+          <div class="gallery-fallback"><i class="fa-solid fa-table"></i><span>Rekap Penyewaan</span></div>
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PENDIDIKAN -->
+<section class="section" id="pendidikan">
+  <div class="container">
+    <p class="section-eyebrow">Pendidikan &amp; Sertifikasi</p>
+    <h2 class="section-title">Latar Belakang Akademik</h2>
+
+    <div class="edu-grid">
+      <div class="edu-col">
+        <h3 class="edu-col-title"><i class="fa-solid fa-graduation-cap"></i> Pendidikan</h3>
+
+        <div class="edu-card edu-highlight">
+          <div class="edu-card-head">
+            <h4>Universitas Garut</h4>
+            <span class="ipk-badge">IPK 3.98</span>
+          </div>
+          <p class="edu-degree">S1 Bisnis Digital &middot; 2024 – Sekarang</p>
+          <p class="edu-desc">Fokus: Pengolahan Data Bisnis, Sistem Informasi Bisnis, Statistik Dasar</p>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-card-head"><h4>SMK Nuurul Muttaqiin</h4></div>
+          <p class="edu-degree">Bisnis Daring &amp; Pemasaran &middot; 2021 – 2024</p>
+        </div>
+      </div>
+
+      <div class="edu-col">
+        <h3 class="edu-col-title"><i class="fa-solid fa-certificate"></i> Pelatihan &amp; Sertifikasi</h3>
+
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="cert-info">
+            <h4>Kursus Online Microsoft Excel untuk Pengolahan Data</h4>
+            <p class="cert-issuer">MySkill &middot; 2026</p>
+            <span class="badge-excel"><i class="fa-solid fa-file-excel"></i> Excel Focus</span>
+          </div>
+          <div class="cert-thumb gallery-item" data-gallery="cert-myskill" data-index="0">
+            <img src="images/cert-myskill.jpg" alt="Sertifikat MySkill Microsoft Excel" onerror="this.parentElement.classList.add('img-fallback')">
+            <div class="gallery-fallback"><i class="fa-solid fa-file-image"></i></div>
+            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="cert-info">
+            <h4>Pelatihan Sertifikasi Internasional MOS MS. Excel</h4>
+            <p class="cert-issuer">Universitas Garut &middot; 2026</p>
+            <span class="badge-excel"><i class="fa-solid fa-file-excel"></i> Excel Focus</span>
+          </div>
+          <div class="cert-thumb gallery-item" data-gallery="cert-mos" data-index="0">
+            <img src="images/cert-mos-excel.jpg" alt="Sertifikat MOS Microsoft Excel" onerror="this.parentElement.classList.add('img-fallback')">
+            <div class="gallery-fallback"><i class="fa-solid fa-file-image"></i></div>
+            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section class="section contact-section" id="kontak">
+  <div class="container">
+    <p class="section-eyebrow section-eyebrow-light">Kontak</p>
+    <h2 class="section-title section-title-light">Mari Berdiskusi Peluang Kerja Sama</h2>
+    <p class="contact-sub">Terbuka untuk kesempatan magang Data Analyst / Data Admin / Reporting. Silakan hubungi melalui salah satu kanal berikut.</p>
+
+    <div class="contact-grid">
+
+      <a href="mailto:tedifirdaus@gmail.com" class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+        <h3>Email</h3>
+        <p>tedifirdaus@gmail.com</p>
+        <span class="contact-btn">Kirim Email <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="https://linkedin.com/in/tedi-firdaus" target="_blank" rel="noopener" class="contact-card">
+        <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+        <h3>LinkedIn</h3>
+        <p>linkedin.com/in/tedi-firdaus</p>
+        <span class="contact-btn">Lihat Profil LinkedIn <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Tedi Firdaus. All rights reserved.</p>
+  </footer>
+</section>
+
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+  <div class="lightbox-content" id="lightboxContent"></div>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
