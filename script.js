@@ -9,7 +9,8 @@
 
 (() => {
   'use strict';
-
+  const ADMIN_PIN = '1234';
+  const INVENTORY_PIN = '7890';
   /* ============================ 1. DATA ============================ */
 
   const IMAGES = {
@@ -835,4 +836,223 @@ function renderTestimonials() {
   }
 
   document.addEventListener('DOMContentLoaded', init);
+ /* ================= ADMIN STOCK FORM ================= */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+
+  const stockPanel = document.getElementById('stockAdminPanel');
+  const stockList = document.getElementById('stockAdminList');
+  const stockClose = document.getElementById('stockAdminClose');
+  const saveStockBtn = document.getElementById('saveStockBtn');
+
+  if (!stockPanel || !stockList || !stockClose || !saveStockBtn) {
+    console.error('Elemen admin tidak ditemukan');
+    return;
+  }
+
+  // Ambil stok tersimpan
+  const savedStock = JSON.parse(localStorage.getItem('trekout-stock') || '{}');
+
+  products.forEach(p => {
+    if (savedStock[p.id]) {
+      p.stockToday = savedStock[p.id].today;
+      p.stockTomorrow = savedStock[p.id].tomorrow;
+    }
+  });
+
+  function renderStockAdmin() {
+  stockList.innerHTML = products.map(p => `
+    <div class="stock-admin-row">
+      <strong>${p.name}</strong>
+
+      <div class="stock-field">
+        <small>Hari Ini</small>
+        <input
+          type="number"
+          min="0"
+          value="${p.stockToday}"
+          data-id="${p.id}"
+          data-type="today"
+        >
+      </div>
+
+      <div class="stock-field">
+        <small>Besok</small>
+        <input
+          type="number"
+          min="0"
+          value="${p.stockTomorrow}"
+          data-id="${p.id}"
+          data-type="tomorrow"
+        >
+      </div>
+    </div>
+  `).join('');
+}
+
+  function openStockAdmin() {
+    renderStockAdmin();
+    stockPanel.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeStockAdmin() {
+    stockPanel.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  stockClose.addEventListener('click', closeStockAdmin);
+
+  saveStockBtn.addEventListener('click', () => {
+    const data = {};
+
+    document.querySelectorAll('.stock-admin-row input').forEach(input => {
+      const product = products.find(p => p.id === input.dataset.id);
+      const value = parseInt(input.value, 10) || 0;
+
+      if (input.dataset.type === 'today') {
+        product.stockToday = value;
+      } else {
+        product.stockTomorrow = value;
+      }
+
+      data[product.id] = {
+        today: product.stockToday,
+        tomorrow: product.stockTomorrow
+      };
+    });
+
+    localStorage.setItem('trekout-stock', JSON.stringify(data));
+
+    renderCatalog();
+    closeStockAdmin();
+
+    alert('Stok berhasil diperbarui!');
+  });
+
+  // 💻 Shortcut admin
+  document.addEventListener('keydown', (e) => {
+    const tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+
+    if (e.ctrlKey && e.altKey && e.key.toLowerCase() === 'm') {
+      e.preventDefault();
+
+      const pin = prompt('Masukkan PIN untuk mengakses fitur ini');
+
+      if (pin === ADMIN_PIN) {
+        openStockAdmin();
+      } else if (pin !== null) {
+        alert('PIN salah!\nIni adalah fitur khusus admin, hanya admin yang dapat mengakses fitur ini. Silahkan hubungi developer.');
+      }
+    }
+  });
+
+
+  // 📱 HP : tahan footer 1.5 detik
+  const footerTrigger = document.querySelector('.footer-bottom');
+  let pressTimer;
+
+  if (footerTrigger) {
+    footerTrigger.addEventListener('touchstart', () => {
+      pressTimer = setTimeout(() => {
+        const pin = prompt('Masukkan PIN untuk mengakses fitur ini');
+
+        if (pin === ADMIN_PIN) {
+          openStockAdmin();
+        } else if (pin !== null) {
+          alert('PIN salah!\nIni adalah fitur khusus admin, hanya admin yang dapat mengakses fitur ini. Silahkan hubungi developer.');
+        }
+      }, 1500);
+    });
+
+    footerTrigger.addEventListener('touchend', () => clearTimeout(pressTimer));
+    footerTrigger.addEventListener('touchcancel', () => clearTimeout(pressTimer));
+  }
+
+});
+
+  // ================= INVENTORY ADMIN ACCESS =================
+
+  document.addEventListener('keydown', (e) => {
+    const tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+
+    // Ctrl + Shift + I
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'm') {
+      e.preventDefault();
+
+      const pin = prompt('Masukkan PIN untuk mengakses fitur ini');
+
+      if (pin === INVENTORY_PIN) {
+        sessionStorage.setItem('trekout-inventory-auth', 'true');
+        window.location.href = 'inventory-admin.html';
+      } else if (pin !== null) {
+        alert('PIN salah!\nIni adalah fitur khusus admin, hanya admin yang dapat mengakses fitur ini. Silahkan hubungi developer.');
+      }
+    }
+  });
+
+  // ================= INVENTORY ADMIN PAGE =================
+
+function initInventoryPage() {
+  const tableBody = document.getElementById('inventoryTableBody');
+  if (!tableBody) return;
+
+  // Proteksi halaman
+  if (sessionStorage.getItem('trekout-inventory-auth') !== 'true') {
+    window.location.href = 'index.html';
+    return;
+  }
+
+  function render(items = products) {
+    tableBody.innerHTML = items.map(p => `
+      <tr>
+        <td><strong>${p.name}</strong></td>
+        <td>${p.category}</td>
+        <td>${rupiah(p.price)}</td>
+      </tr>
+    `).join('');
+  }
+
+  render();
+
+  // Search
+  const searchInput = document.getElementById('inventorySearch');
+
+  searchInput.addEventListener('input', (e) => {
+    const term = e.target.value.toLowerCase();
+
+    const filtered = products.filter(p =>
+      p.name.toLowerCase().includes(term)
+    );
+
+    render(filtered);
+  });
+
+  // Logout
+  document.getElementById('inventoryLogoutBtn')
+    .addEventListener('click', () => {
+      sessionStorage.removeItem('trekout-inventory-auth');
+      window.location.href = 'index.html';
+    });
+
+  // Simpan inventaris
+  document.getElementById('inventorySaveBtn')
+    .addEventListener('click', () => {
+      localStorage.setItem('trekout-products', JSON.stringify(products));
+      alert('Inventaris berhasil disimpan!');
+    });
+}
+
+// Jalankan jika sedang di halaman inventory
+if (document.body.classList.contains('inventory-page')) {
+  document.addEventListener('DOMContentLoaded', initInventoryPage);
+}
+
+
+
+
 })();
+
